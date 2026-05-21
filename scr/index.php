@@ -10,3 +10,5 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+// teste merge dev
