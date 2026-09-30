@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Contato</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1>Agenda de contatos</h1>
+
+        <div class="campo"><label>Nome</label><input type="text" id="nome" class="input-padrao"></div>
+
+        <div style="display:flex; gap:10px;">
+            <div class="campo" style="flex:1;"><label>CEP</label><input type="text" id="cep" class="input-padrao"></div>
+            <div class="campo" style="flex:3;"><label>Rua</label><input type="text" id="rua" class="input-padrao"></div>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+            <div class="campo" style="flex:3;"><label>Bairro</label><input type="text" id="bairro" class="input-padrao">
+            </div>
+            <div class="campo" style="flex:1;"><label>Número</label><input type="text" id="numero" class="input-padrao">
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Cidade</label>
+            <select id="cidade" class="input-padrao">
+                <option value="">Selecione uma cidade</option>
+            </select>
+        </div>
+
+        <div class="campo"><label>Telefone</label><input type="text" id="telefone" class="input-padrao"></div>
+
+        <button id="btnCadastrar" class="btn-cadastrar">CADASTRAR</button>
+    </div>
+
+    <div id="modalCidade"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+        <div
+            style="background:white; padding:20px; border-radius:8px; width: 300px; display:flex; flex-direction:column; gap:10px;">
+            <h3>Nova Cidade</h3>
+            <label>Cidade:</label> <input type="text" id="novaCidade" class="input-padrao">
+            <label>Estado (Sigla):</label> <input type="text" id="novoEstado" class="input-padrao" maxlength="2">
+            <div style="display:flex; gap:10px; margin-top:10px;">
+                <button id="btnOkCidade" class="btn-cadastrar" style="flex:1;">OK</button>
+                <button onclick="document.getElementById('modalCidade').style.display='none'"
+                    style="flex:1; cursor:pointer;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+
+</html>

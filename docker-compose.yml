@@ -1,9 +1,19 @@
 services:
   app:
     build: .docker/php
-    ports: ["8080:80"]
-    volumes: ["./scr:/var/www/html"]
+    ports:
+      - "8080:80"
+    volumes:
+      - "./scr:/var/www/html"
+    depends_on:
+      - db
+
   db:
-    image: jacobalberty/firebird:3.0
-    environment: [ISC_PASSWORD=masterkey]
-    volumes: ["./data:/firebird/data"]
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: agenda_contatos
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./data:/var/lib/mysql"

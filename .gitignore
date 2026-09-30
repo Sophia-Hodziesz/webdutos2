@@ -1,0 +1,10 @@
+# Arquivos internos
+data/*
+!data/agenda.sql
+*.fdb
+*.dblwr
+*.pem
+*.sock
+binlog.*
+ib*
+undo_*
